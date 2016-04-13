@@ -1,0 +1,11 @@
+<a href="<%= "/categories" %>">Return to Home</a>
+<div class="container">
+  <a href="/articles/new">Create a New Post</a>
+  <h2><%= @category.name %></h2>
+  <% @category.articles.each do |article| %>
+    <div class="article-view">
+      <a href="<%= "/articles/#{article.id}" %>"><%= article.title %></a>
+      <%= article.created_at %>
+    </div>
+  <% end %>
+</div>

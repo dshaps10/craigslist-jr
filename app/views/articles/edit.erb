@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>Edit Your Post</h2>
+  <p>Category: <%= @article.category.name %></p>
+  <form action="<%= "/articles/#{@article.id}" %>" method="POST">
+    <input type="hidden" name="_method" value="put">
+    <input type="text" name="title" value="<%= @article.title %>"></input><br><br>
+    <textarea name="body"><%= @article.body %></textarea><br><br>
+    <input type="submit">
+  </form>
+  <p><%= @article.created_at %></p>
+</div>
