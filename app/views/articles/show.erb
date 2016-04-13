@@ -1,0 +1,13 @@
+<a href="<%= "/categories/#{@article.category.name}" %>">Return to Article List</a>
+<div class="container">
+  <p>Category: <%= @article.category.name %></p>
+  <h2><%= @article.title %></h2>
+  <p><%= @article.body %></p>
+  <p>Created at: <%= @article.created_at %></p>
+  <p>Last updated: <%= @article.updated_at %></p>
+  <a href="<%= "/articles/#{@article.id}/edit" %>">Edit This Post</a><br><br>
+  <form action="<%= "/articles/#{@article.id}" %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="DELETE">
+  </form>
+</div>

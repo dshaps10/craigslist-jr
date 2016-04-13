@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Create new article</h2>
+  <!-- <form action="/articles/?passcode=<%= @passcode%>" method="POST"> -->
+  <form action="/articles" method="POST">
+    <select name="category">
+      <% Category.all.each do |category| %>
+      <option value="<%= category.name %>"><%= category.name %></option>
+      <% end %>
+    </select><br><br>
+    <input type="text" name="title" placeholder="Title"> <br><br>
+    <textarea name="body" placeholder="Article text..."></textarea> <br><br>
+    <h3 <%= @passcode %></h3>
+    <input type="submit">
+  </form>
+</div>
